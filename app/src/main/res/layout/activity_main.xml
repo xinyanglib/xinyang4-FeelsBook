@@ -6,20 +6,6 @@
     android:layout_height="match_parent"
     tools:context="com.xinyang4.ualberta.feelsbook.MainActivity">
 
-    <ImageButton
-        android:id="@+id/addEmotion"
-        android:layout_width="55dp"
-        android:layout_height="51dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="16dp"
-        android:background="@android:color/white"
-        android:onClick="addEmotion"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/add" />
-
-
 
     <ListView
         android:id="@+id/emotionList"
@@ -34,30 +20,95 @@
         android:dividerHeight="0dp"
         />
 
+    <LinearLayout
+        android:layout_width="0px"
+        android:layout_height="0px"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        >
+
+    </LinearLayout>
+
+
+
     <EditText
         android:id="@+id/comment"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
         android:ems="10"
         android:hint="Write some comments"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/selectyEmotion"
+        android:maxLength="100"
+        app:layout_constraintBottom_toTopOf="@+id/emotion_btn_2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:maxLength="100"/>
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <Spinner
-        android:id="@+id/selectyEmotion"
-        android:layout_width="0dp"
+    <Button
+        android:id="@+id/emotion_btn_4"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/addEmotion"
-        app:layout_constraintStart_toStartOf="parent"
-></Spinner>
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/emotion_btn_5"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/emotion_btn_6"
+        app:layout_constraintStart_toEndOf="@+id/emotion_btn_4" />
+
+    <Button
+        android:id="@+id/emotion_btn_6"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/emotion_btn_1"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Button"
+        app:layout_constraintBottom_toTopOf="@+id/emotion_btn_4"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/emotion_btn_2"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Button"
+        app:layout_constraintBottom_toTopOf="@+id/emotion_btn_5"
+        app:layout_constraintEnd_toStartOf="@+id/emotion_btn_3"
+        app:layout_constraintStart_toEndOf="@+id/emotion_btn_1" />
+
+    <Button
+        android:id="@+id/emotion_btn_3"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Button"
+        app:layout_constraintBottom_toTopOf="@+id/emotion_btn_6"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 </android.support.constraint.ConstraintLayout>

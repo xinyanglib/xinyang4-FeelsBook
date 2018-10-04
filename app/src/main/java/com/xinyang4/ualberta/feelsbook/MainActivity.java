@@ -12,18 +12,19 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Comparator;
 
 
 public class MainActivity extends AppCompatActivity {
 
     private ListView listView;
-    private Spinner selectEmotion;
     private EditText comment;
     private AlertDialog.Builder statisticDialog;
     private ArrayAdapter<String> statisticAdapter;
@@ -37,13 +38,30 @@ public class MainActivity extends AppCompatActivity {
 
         // get views
         listView = findViewById(R.id.emotionList);
-        selectEmotion = findViewById(R.id.selectyEmotion);
         comment = findViewById(R.id.comment);
+        // bind btns
+        int btnIds[] = {
+                R.id.emotion_btn_1,
+                R.id.emotion_btn_2,
+                R.id.emotion_btn_3,
+                R.id.emotion_btn_4,
+                R.id.emotion_btn_5,
+                R.id.emotion_btn_6
+        };
 
-        // bind adapter to spinner
-        ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_dropdown_item, Emotion.CATALOG);
-        selectEmotion.setAdapter(spinnerAdapter);
+        for (int i = 0; i < 6; ++i){
+            Button btn = findViewById(btnIds[i]);
+            btn.setText(Emotion.CATALOG[i]);
+            final int j = i;
+            btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    addEmotion(j);
+                }
+            });
+
+        }
+
 
 
         // bind adapter to listview
@@ -109,9 +127,9 @@ public class MainActivity extends AppCompatActivity {
         adapter.notifyDataSetChanged();
     }
 
-    public void addEmotion(View view){
+    public void addEmotion(int emotion){
         DataManager.getInstance(this).getEmotions().add(new Emotion(
-                selectEmotion.getSelectedItemPosition(),
+                emotion,
                 comment.getText().toString()
         ));
 
