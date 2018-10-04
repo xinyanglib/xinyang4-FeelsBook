@@ -6,7 +6,7 @@
 * jingyuan Ma
 
 # APK and UML Files 
-* the apk files: appapp\build\outputs\apk
+* the apk files: appapp\build\outputs\apk\debug
 * uml image file: doc\uml
 
 # Reference:
