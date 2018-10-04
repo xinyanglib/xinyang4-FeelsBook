@@ -21,7 +21,9 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Comparator;
 
-
+/**
+ * to view the mention button
+ */
 public class MainActivity extends AppCompatActivity {
 
     private ListView listView;
@@ -61,9 +63,6 @@ public class MainActivity extends AppCompatActivity {
             });
 
         }
-
-
-
         // bind adapter to listview
         final EmotionListAdapter listAdapter = new EmotionListAdapter(this,
                 R.layout.item_emotion,dm.getEmotions());
@@ -79,6 +78,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+    /**
+     * to create the the history list include the select option in the menu.
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -96,7 +98,9 @@ public class MainActivity extends AppCompatActivity {
 
         return true;
     }
-
+    /**
+     * find the history the option item that your select.
+     */
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
         switch (item.getItemId()) {
@@ -126,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
         adapter.select(-1);
         adapter.notifyDataSetChanged();
     }
-
+    // add the new emotion in it.
     public void addEmotion(int emotion){
         DataManager.getInstance(this).getEmotions().add(new Emotion(
                 emotion,

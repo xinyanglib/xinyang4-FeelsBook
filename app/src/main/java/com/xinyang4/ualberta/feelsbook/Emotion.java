@@ -8,7 +8,9 @@ import java.util.Locale;
 /**
  * Created by apple on 2018/9/22.
  */
-
+/**
+ * this is emotion class to store the emotion in order to convinent use. get data comment ... etc.
+ */
 public class Emotion {
 
     public final static String[] CATALOG = {

@@ -26,7 +26,11 @@ public class EditActivity extends AppCompatActivity {
     private TimePickerDialog timePickerDialog;
     private Calendar calendar = Calendar.getInstance();
     private int index;
-
+    /**
+     * select the emotion and get the data and comment (if it has comment). use the java class timepicherdialog.
+     * also it can edit the data comment and change the emotion.
+     * the adapter used the stack over flow i post it in the resource in the readme.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

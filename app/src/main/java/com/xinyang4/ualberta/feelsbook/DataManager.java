@@ -17,10 +17,17 @@ import java.util.ArrayList;
  * Created by apple on 2018/9/29.
  */
 
+/**
+ * to manage the data form.
+ */
 public class DataManager {
     private static DataManager ourInstance = null;
     private static final String FILENAME = "feelsbook.json";
 
+    /**
+     * to make the new data if there is not have
+     * if it is , get the file.
+     */
     public static DataManager getInstance(Context context) {
         if (ourInstance == null){
             if (!DataManager.loadFromFile(context)){
@@ -29,7 +36,10 @@ public class DataManager {
         }
         return ourInstance;
     }
-
+    /**
+     * use json to make some difficult string type.
+     * to open the file to get the useful data.
+     */
     private static boolean loadFromFile(Context context){
         try {
             FileInputStream fis = context.openFileInput(FILENAME);
@@ -42,14 +52,18 @@ public class DataManager {
             }
             return true;
         }
-
+        /**
+         * to check exception. use the lab resource.
+         */
         catch (FileNotFoundException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
             return false;
         }
     }
-
+    /**
+     *  save the file in the lab resource.
+     */
     public static void saveToFile(Context context){
         try {
             FileOutputStream fos = context.openFileOutput(FILENAME, Context.MODE_PRIVATE);

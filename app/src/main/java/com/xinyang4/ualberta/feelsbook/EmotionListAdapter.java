@@ -16,7 +16,9 @@ import java.util.List;
 /**
  * Created by apple on 2018/9/29.
  */
-
+/**
+ * to show the emotion from the emotion class we use the array to store it.
+ */
 public class EmotionListAdapter extends ArrayAdapter<Emotion>{
     private int resourceLayout;
     private Context mContext;
@@ -27,7 +29,9 @@ public class EmotionListAdapter extends ArrayAdapter<Emotion>{
         this.resourceLayout = resource;
         this.mContext = context;
     }
-
+    /**
+     * to get the position than get the view
+     */
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
 
@@ -72,7 +76,9 @@ public class EmotionListAdapter extends ArrayAdapter<Emotion>{
         return v;
     }
 
-
+    /**
+     * to count the emotion data.
+     */
     @Override
     public void notifyDataSetChanged() {
         DataManager.getInstance(getContext()).getEmotions().sort(new Comparator<Emotion>() {
