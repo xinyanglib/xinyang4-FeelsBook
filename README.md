@@ -4,6 +4,7 @@
 
 # Collaborator
 * jingyuan Ma
+* qingyang Zhang
 
 # APK and UML Files 
 * the apk files: appapp\build\outputs\apk\debug
